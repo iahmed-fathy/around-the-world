@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const activeCirecleStyle =
   "flex items-center justify-center w-5 h-5 rounded-full";
 
-const ThemeSwithcer = () => {
+function ThemeSwithcer() {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const ThemeSwithcer = () => {
 
   return (
     <>
-      <div className="flex items-center w-14 h-8 justify-around rounded-full bg-[#1F2937] dark:bg-black">
+      <div className="flex h-8 w-14 items-center justify-around rounded-full bg-[#1F2937] dark:bg-black">
         <button
           className={`${activeCirecleStyle} ${
             theme === "light" ? "bg-white" : ""
@@ -73,6 +73,6 @@ const ThemeSwithcer = () => {
       </div>
     </>
   );
-};
+}
 
 export default ThemeSwithcer;

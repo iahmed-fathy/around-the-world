@@ -1,6 +1,8 @@
-const Logo = () => {
+import { Link } from "react-router-dom";
+
+function Logo() {
   return (
-    <a className="flex gap-3 items-center font-semibold">
+    <Link to="/" className="flex items-center gap-3 font-semibold">
       <svg
         width="24"
         height="28"
@@ -39,8 +41,8 @@ const Logo = () => {
         />
       </svg>
       Around the world
-    </a>
+    </Link>
   );
-};
+}
 
 export default Logo;
