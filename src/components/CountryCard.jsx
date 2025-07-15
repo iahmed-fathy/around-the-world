@@ -18,17 +18,17 @@ function CountryCard(props) {
         <h3 className="my-3 text-lg font-extrabold">
           {lang === "ar" ? arName : name}
         </h3>
-        <p className="text-sm">
+        <p className="text-sm leading-8">
           <span className="font-semibold">{t("Population")} : </span>
           <span className="font-light">
             {new Intl.NumberFormat().format(population)}
           </span>
         </p>
-        <p className="text-sm">
+        <p className="text-sm leading-8">
           <span className="font-semibold">{t("Region")} : </span>
           <span className="font-light">{t(`Regions.${region}`)}</span>
         </p>
-        <p className="text-sm">
+        <p className="text-sm leading-8">
           <span className="font-semibold">{t("Capital")} : </span>
           <span className="font-light">{t(`Capitals.${capital}`)}</span>
         </p>
