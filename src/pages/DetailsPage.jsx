@@ -1,12 +1,21 @@
 import { Link, useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { AppContext } from "../AppContext";
 
 function DetailsPage() {
+  const { loading, countriesData, t, i18n } = useContext(AppContext);
+  const detailsPageRef = useRef(null);
+
+  useEffect(() => {
+    if (detailsPageRef.current) {
+      const direction = i18n.language === "ar" ? "rtl" : "ltr";
+      detailsPageRef.current.dir = direction;
+      detailsPageRef.current.lang = i18n.language;
+    }
+  }, [i18n.language]);
+
   const { countryID } = useParams();
   const [countryInfo, setCountryInfo] = useState();
-
-  const { loading, countriesData } = useContext(AppContext);
 
   useEffect(() => {
     const foundData = countriesData.find(
@@ -23,7 +32,7 @@ function DetailsPage() {
     );
   } else {
     return (
-      <div className="mx-7 grid gap-5 md:grid-cols-2">
+      <div ref={detailsPageRef} className="mx-7 grid gap-5 md:grid-cols-2">
         <Link
           to=".."
           className="col-span-full h-10 w-10 content-center justify-center rounded-lg bg-white p-2 shadow dark:bg-gray-800"
@@ -53,51 +62,61 @@ function DetailsPage() {
 
         <div className="grid w-full gap-5 self-center md:grid-cols-2">
           <h1 className="col-span-full text-2xl font-extrabold">
-            {countryInfo.name}
+            {i18n.language === "ar" ? countryInfo.arName : countryInfo.name}
           </h1>
           <div>
             <div className="text-start text-base font-semibold leading-8">
               <p>
-                <span>Native Name: </span>
-                <span className="font-normal">{countryInfo.name}</span>
+                <span>{t("Native Name")} : </span>
+                <span className="font-normal">
+                  {i18n.language === "ar"
+                    ? countryInfo.arName
+                    : countryInfo.name}
+                </span>
               </p>
-
               <p>
-                <span>Population: </span>
-                <span className="font-normal">{countryInfo.population}</span>
+                <span>{t("Population")} : </span>
+                <span className="font-normal">
+                  {new Intl.NumberFormat().format(countryInfo.population)}
+                </span>
               </p>
-
               <p>
-                <span>Region: </span>
-                <span className="font-normal">{countryInfo.region}</span>
+                <span>{t("Region")} : </span>
+                <span className="font-normal">
+                  {t(`Regions.${countryInfo.region}`)}
+                </span>
               </p>
-
               <p>
-                <span>Sub Region: </span>
-                <span className="font-normal">{countryInfo.subregion}</span>
+                <span>{t("Subregion")} : </span>
+                <span className="font-normal">
+                  {t(`Subregions.${countryInfo.subregion}`)}
+                </span>
               </p>
-
               <p>
-                <span>Capital: </span>
-                <span className="font-normal">{countryInfo.capital}</span>
+                <span>{t("Capital")} : </span>
+                <span className="font-normal">
+                  {t(`Capitals.${countryInfo.capital}`)}
+                </span>
               </p>
             </div>
           </div>
 
           <div className="text-base font-semibold leading-8">
             <p>
-              <span>Top Level Domain: </span>
+              <span>{t("Top Level Domain")} : </span>
               <span className="font-normal">{countryInfo.topLevelDomain}</span>
             </p>
-
             <p>
-              <span>Currencies: </span>
-              <span className="font-normal">{countryInfo.currencies}</span>
+              <span>{t("Currencies")} : </span>
+              <span className="font-normal">
+                {t(`CurrenciesList.${countryInfo.currencies}`)}
+              </span>
             </p>
-
             <p>
-              <span>Languages: </span>
-              <span className="font-normal">{countryInfo.languages}</span>
+              <span>{t("Languages")} : </span>
+              <span className="font-normal">
+                {t(`languages.${countryInfo.languages}`)}
+              </span>
             </p>
           </div>
         </div>

@@ -26,7 +26,8 @@ function useLoadData(url) {
             const mappedData = jsonData.map((record) => ({
               key: record?.name.official,
               flag: record?.flags.png,
-              population: parseInt(record?.population).toLocaleString(),
+              // population: parseInt(record?.population).toLocaleString(),
+              population: record?.population,
               name: record?.name.common,
               region: record?.region,
               subregion: record?.subregion,
@@ -39,7 +40,8 @@ function useLoadData(url) {
               languages:
                 record?.languages &&
                 Object.values(record?.languages).join(", "),
-              topLevelDomain: record?.tld?.join(", ") || "N/A",
+              topLevelDomain: record?.tld[0] || "N/A",
+              arName: record?.translations.ara.official,
             }));
             localStorage.setItem(localStorageKey, JSON.stringify(mappedData));
             setCountriesData(mappedData);

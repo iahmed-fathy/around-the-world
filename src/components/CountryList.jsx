@@ -29,6 +29,7 @@ function CountryList() {
               name={record.name}
               region={record.region}
               capital={record.capital}
+              arName={record.arName}
             />
           </Link>
         ))}

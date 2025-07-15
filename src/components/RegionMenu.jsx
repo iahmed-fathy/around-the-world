@@ -2,17 +2,19 @@ import { useContext } from "react";
 import Select from "react-select";
 import { AppContext } from "../AppContext";
 
-const options = [
-  { value: "All", label: "All regions" },
-  { value: "Europe", label: "Europe" },
-  { value: "Asia", label: "Asia" },
-  { value: "Africa", label: "Africa" },
-  { value: "Americas", label: "Americas" },
-  { value: "Oceania", label: "Oceania" },
-  { value: "Antarctic", label: "Antarctic" },
-];
-
 function RegionMenu() {
+  const { t } = useContext(AppContext);
+
+  const options = [
+    { value: "All", label: t("All regions") },
+    { value: "Europe", label: t("Regions.Europe") },
+    { value: "Asia", label: t("Regions.Asia") },
+    { value: "Africa", label: t("Regions.Africa") },
+    { value: "Americas", label: t("Regions.Americas") },
+    { value: "Oceania", label: t("Regions.Oceania") },
+    { value: "Antarctic", label: t("Regions.Antarctic") },
+  ];
+
   const { selectedRegion, setSelectedRegion } = useContext(AppContext);
 
   function onChangeSelectValue(selectValue) {
