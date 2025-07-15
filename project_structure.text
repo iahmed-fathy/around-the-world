@@ -1,0 +1,55 @@
+- .gitignore
+- .prettierrc
+- README.md
+- dist
+  - assets
+    - browser-ponyfill-D1Tsy1lQ.js
+    - index-CL25Lrtp.css
+    - index-tAkatorQ.js
+  - index.html
+  - locales
+    - ar
+      - translation.json
+    - en
+      - translation.json
+  - pageIocn.png
+- eslint.config.js
+- index.html
+- package-lock.json
+- package.json
+- postcss.config.js
+- public
+  - locales
+    - ar
+      - translation.json
+    - en
+      - translation.json
+  - pageIocn.png
+- src
+  - App.jsx
+  - AppContext.jsx
+  - assets
+    - around-the-world.drawio
+  - components
+    - CountryCard.jsx
+    - CountryList.jsx
+    - Header.jsx
+    - Logo.jsx
+    - NoResultFound.jsx
+    - RegionMenu.jsx
+    - SearchInput.jsx
+    - ShowMessage.jsx
+    - ThemeSwithcer.jsx
+  - i18n.js
+  - index.css
+  - main.jsx
+  - pages
+    - DetailsPage.jsx
+    - ErrorPage.jsx
+    - Home.jsx
+    - Layout.jsx
+  - utils
+    - hooks
+      - useLoadData.jsx
+- tailwind.config.js
+- vite.config.js

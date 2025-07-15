@@ -2,10 +2,13 @@ import { Link } from "react-router-dom";
 
 function Logo() {
   return (
-    <Link to="/" className="flex items-center gap-3 font-semibold">
+    <Link
+      to="/"
+      className="flex items-center gap-3 text-xl font-black max-md:text-lg"
+    >
       <svg
-        width="24"
-        height="28"
+        width="40"
+        height="40"
         viewBox="0 0 24 28"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
