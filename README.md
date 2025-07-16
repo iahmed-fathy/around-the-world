@@ -1,12 +1,80 @@
-# React + Vite
+# Around the World
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive web application to explore information about countries worldwide. The app supports both Arabic and English languages and features a responsive, dark/light theme.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Browse Countries:** View all countries with search and filter by region/continent.
+- **Country Details:** Click a country to see detailed info: native name, population, capital, currencies, languages, and more.
+- **Bilingual Support:** Easily switch between Arabic and English.
+- **Dark/Light Mode:** Toggle between light and dark themes.
+- **Local Storage:** Country data is cached locally for faster loading and reduced network usage.
+- **Responsive Design:** Works seamlessly on all devices.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://react.dev/)
+- [React Router](https://reactrouter.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [react-i18next](https://react.i18next.com/) for translations
+- [Vite](https://vitejs.dev/) for fast development and build
+
+## Project Structure
+
+```
+src/
+  App.jsx
+  AppContext.jsx
+  i18n.js
+  index.css
+  main.jsx
+  assets/
+    around-the-world.drawio
+  components/
+    CountryCard.jsx
+    CountryList.jsx
+    Header.jsx
+    Logo.jsx
+    NoResultFound.jsx
+    RegionMenu.jsx
+    SearchInput.jsx
+    ShowMessage.jsx
+    ThemeSwithcer.jsx
+  pages/
+    DetailsPage.jsx
+    ErrorPage.jsx
+    Home.jsx
+    Layout.jsx
+  utils/
+    hooks/
+      useLoadData.jsx
+public/
+  locales/
+    ar/translation.json
+    en/translation.json
+```
+
+## Getting Started
+
+1. Install dependencies:
+   ```
+   npm install
+   ```
+2. Start the development server:
+   ```
+   npm run dev
+   ```
+3. Open your browser at the shown address (usually http://localhost:5173/around-the-world/
+   ).
+
+## Data Source
+
+Country data is fetched from [REST Countries API](https://restcountries.com/).
+
+## Contributing
+
+Contributions and suggestions are welcome! Please open issues or pull requests.
+
+---
+
+© 2024 Around the World
