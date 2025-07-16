@@ -2,6 +2,8 @@
 
 A modern, interactive web application to explore information about countries worldwide. The app supports both Arabic and English languages and features a responsive, dark/light theme.
 
+![Around the World Screenshot](screenshot/dark-mode.png)
+
 ## Features
 
 - **Browse Countries:** View all countries with search and filter by region/continent.
