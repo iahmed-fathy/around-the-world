@@ -7,7 +7,7 @@ function CountryCard(props) {
   const lang = i18n.language;
 
   return (
-    <div className="h-[350px] max-w-[264px] rounded-[10px] bg-white p-[10px] text-[#111827] shadow dark:bg-gray-800 dark:text-gray-100">
+    <div className="h-full max-w-[264px] rounded-[10px] bg-white p-[10px] text-[#111827] shadow dark:bg-gray-800 dark:text-gray-100">
       <img
         src={flag}
         alt={`${name} flag`}
